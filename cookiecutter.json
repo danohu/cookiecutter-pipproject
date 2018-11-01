@@ -1,9 +1,10 @@
 {
-	"full_name": "Martí Bosch",
-	"email": "",
-	"github_username": "martibosch",
-	"project_name": "My Pip Installable Python Package",
-	"app_name": "mypippkg",
-	"project_short_description": "A python package that can be installed with pip.",
-	"version": "0.0.1"
+    "full_name": "Martí Bosch",
+    "email": "marti.bosch@epfl.ch",
+    "github_username": "martibosch",
+    "project_title": "My Pip Installable Python Package",
+    "distr_pkg_name": "mypippkg",
+    "import_pkg_name": "mypippkg",
+    "project_short_description": "A python package that can be installed with pip.",
+    "version": "0.0.1"
 }

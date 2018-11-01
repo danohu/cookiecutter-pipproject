@@ -20,12 +20,12 @@ dependency_links = [
 ]
 
 setup(
-    name='{{cookiecutter.app_name}}',
+    name='{{cookiecutter.distr_pkg_name}}',
     version=__version__,
     description='{{cookiecutter.project_short_description}}',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}',
+    url='https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.distr_pkg_name}}',
     author='{{cookiecutter.full_name}}',
     author_email='{{cookiecutter.email}}',
     license='GPL-3.0',

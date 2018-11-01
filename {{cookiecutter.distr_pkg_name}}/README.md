@@ -1,4 +1,4 @@
-{{ cookiecutter.project_name }}
+{{ cookiecutter.project_title }}
 ===============================
 
 Overview
@@ -11,10 +11,10 @@ Installation / Usage
 
 To install use pip:
 
-    $ pip install {{ cookiecutter.app_name }}
+    $ pip install {{ cookiecutter.distr_pkg_name }}
 
 
 Or clone the repo:
 
-    $ git clone https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}.git
+    $ git clone https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.distr_pkg_name}}.git
     $ python setup.py install
