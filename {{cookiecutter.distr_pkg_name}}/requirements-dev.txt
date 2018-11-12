@@ -1,4 +1,6 @@
 coverage
 coveralls
+flake8
 pytest
+tox-travis
 yapf
