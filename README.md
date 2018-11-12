@@ -1,51 +1,46 @@
 CookieCutter Pip-Project
 ========================
 
-A cookiecutter template for python projects intended to be pip-installed
+A cookiecutter template for python projects intended to be pip-installed, based on [cookiecutter](https://github.com/audreyr/cookiecutter)
 
-[cookiecutter](https://github.com/audreyr/cookiecutter)
+Features
+--------
 
-Inspired by: [sloria](https://github.com/sloria/cookiecutter-flask.git)
+* Testing environment with [tox](https://github.com/tox-dev/tox) for Python 2.7 and 3.6, with
+  * Tests with [pytest](https://docs.pytest.org/en/latest/)
+  * Style checking with [Flake8](http://flake8.pycqa.org/en/latest/)
+* Continuous integration with [Travis-CI](https://travis-ci.org)
+* Coverage with [coveralls](http://coveralls.io/)
+* Automated [PyPI](https://pypi.org/) releases [via Travis-CI](https://docs.travis-ci.com/user/deployment/pypi/)
+* Configuration for
+  * [bumpversion](https://github.com/peritus/bumpversion)
+  * [yapf](https://github.com/google/yapf)
 
 
-Using CookieCutter for your project
+Usage
 -----------------------------------
 
-    $ pip install cookiecutter
-    $ cookiecutter https://github.com/wdm0006/cookiecutter-pipproject.git
+1. Generate a Python package project with [cookiecutter](https://github.com/audreyr/cookiecutter) as in 
 
-You will be asked about your basic info (name, project name, app name, etc.). This info will be used in your new project.
+        pip install cookiecutter
+        cookiecutter https://github.com/martibosch/cookiecutter-pipproject.git
+        
+    You will be asked about your basic info (name, project name, short description, etc.), which will be used in your new project.
+  
+2. Create a git repository for the project
 
+3. Add the repository to your [Travis-CI](https://travis-ci.org) account
 
-Publishing your project to pypi
--------------------------------
+4. Add the repository to your [coveralls](http://coveralls.io/) account
 
-There are two ways to publish your project:
+5. Register your project to [PyPI](https://pypi.org/) e.g. via [twine](https://github.com/pypa/twine)
 
- * the manual way, outlined [here](http://www.willmcginnis.com/2015/11/12/create-a-pip-installable-python-package-in-2-minutes/)
- * and with pypi-publisher [ppp](https://github.com/wdm0006/pypi-publisher)
- 
-Goals
------
+        pip install twine
+        python setup.py sdist bdist_wheel
+        twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
 
-The goal of this project is simply to take some of the boiler plate out of creating a new python project. It is intended
-to stay pretty minimal, but contains everything needed to make a project that includes:
+6. Add your encrypted PyPI password to the `.travis.yml` file for automated PyPI deployment. Note that this requires the [Travis command line tool](https://github.com/travis-ci/travis)
 
- * Sphinx documentation
- * Installable via pip in pypi
- * Testing via Nose and Coverage
+        travis encrypt --add deploy.password
 
-In the future, we may include some other things like:
-
- * basic travic ci configuration
- * anything else you think might make sense (open up an issue with ideas).
- 
-Contributing
-------------
-
-The intent of this project is to stay fairly lean, but if you have any suggestions or would like to help out, please let me know.
-
-License
--------
-
-BSD licensed.
+Thereupon, each time you push a tag to the master branch, successful [Travis-CI](https://travis-ci.org) builds will automatically deploy your package to PyPI
