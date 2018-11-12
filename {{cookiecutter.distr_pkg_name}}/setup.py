@@ -1,10 +1,20 @@
 # coding=utf-8
 
 from io import open  # compatible enconding parameter
-from setuptools import setup, find_packages
 from os import path
 
+from setuptools import find_packages, setup
+
 __version__ = '{{cookiecutter.version}}'
+
+classifiers = [
+    'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 2',
+    'Programming Language :: Python :: 2.7',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.6',
+]
 
 here = path.abspath(path.dirname(__file__))
 
@@ -27,7 +37,9 @@ setup(
     description='{{cookiecutter.project_short_description}}',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.distr_pkg_name}}',
+    classifiers=classifiers,
+    url=
+    'https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.distr_pkg_name}}',
     author='{{cookiecutter.full_name}}',
     author_email='{{cookiecutter.email}}',
     license='GPL-3.0',
