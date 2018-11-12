@@ -1,3 +1,5 @@
+# coding=utf-8
+
 from io import open  # compatible enconding parameter
 from setuptools import setup, find_packages
 from os import path
