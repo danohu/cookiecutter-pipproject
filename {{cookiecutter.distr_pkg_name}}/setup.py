@@ -39,7 +39,7 @@ setup(
     classifiers=classifiers,
     url=
     'https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.distr_pkg_name}}',
-    author='{{cookiecutter.full_name}}',
+    author="{{ cookiecutter.full_name.replace('"', '\"') }}",
     author_email='{{cookiecutter.email}}',
     license='GPL-3.0',
     packages=find_packages(exclude=['docs', 'tests*']),
